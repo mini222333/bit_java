@@ -1,0 +1,32 @@
+package day25;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class Test01 {
+	public static void main(String[] args) {
+		InetAddress ip = null;
+		try {
+			ip = InetAddress.getLocalHost();
+		} catch (UnknownHostException e) {
+
+			e.printStackTrace();
+		}
+			System.out.println("getHostName"+ip.getHostName());
+			System.out.println("getHostAddress"+ip.getHostAddress());
+			System.out.println("getHostAddress"+ip.toString());
+			System.out.println("---------------------------------");
+			
+			try {
+				ip = InetAddress.getByName("www.naver.com");
+			} catch (UnknownHostException e1) {
+				e1.printStackTrace();
+			}
+		System.out.println("getHostName"+ip.getHostName());
+		System.out.println("getHostAddress"+ip.getHostAddress());
+		System.out.println("getHostAddress"+ip.toString());
+		
+		
+		System.out.println("------------------------------");
+	}
+}
